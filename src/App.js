@@ -6,22 +6,22 @@ import Parade from './Parade';
 
 function App() {
   const [pandaSize, setPandaSize] = useState(30);
-  const [hedgehogSize, sethedgehogSize] = useState(30);
+  const [hedgehogSize, setHedgehogSize] = useState(30);
   const [isOpen, setIsOpen] = useState(false);
-  const [animalArr, setAnimalArr] = useState(['giraffe', 'leopard', 'kangaroo', 'seal']);
+  const [animalArr, setAnimalArr] = useState(['giraffe', 'seal', 'leopard', 'kangaroo']);
 
   return (
-    <div className="App">
+    <><h2>Welcome to Busy Zoo!</h2><div className="App">
       <section className="fight">
         <div className="panda">
-          {/* the width of the panda should be 2 times whatever the hedgehog size is in state */}
+          {/* the width of the panda should be 1.5 times whatever the hedgehog size is in state */}
           <img src="panda.png" width={pandaSize * 1.5} />
           <button onClick={() => setPandaSize(pandaSize + 5)}>Panda gets stronger</button>
-          <button onClick={() => sethedgehogSize(hedgehogSize - 5)}>Panda attacks Hedgehog</button>
+          <button onClick={() => setHedgehogSize(hedgehogSize - 5)}>Panda attacks Hedgehog</button>
         </div>
         <div className="hedgehog">
           <img src="hedgehog.png" width={hedgehogSize * 1} />
-          <button onClick={() => sethedgehogSize(hedgehogSize + 5)}>Hedgehog gets stronger</button>
+          <button onClick={() => setHedgehogSize(hedgehogSize + 5)}>Hedgehog gets stronger</button>
           <button onClick={() => setPandaSize(pandaSize - 5)}>Hedgehog attacks Panda</button>
         </div>
       </section>
@@ -36,15 +36,15 @@ function App() {
 
       <section className="parade">
         <Parade animalArray={animalArr} />
-        <button>+ Giraffe</button>
-        <button>+ Leopard</button>
-        <button>+ Kangaroo</button>
-        <button>+ Seal</button>
-        <button>Remove Animal</button>
-
+        <div>
+          <button onClick={() => setAnimalArr([...animalArr, 'giraffe'])}>+ Giraffe</button>
+          <button onClick={() => setAnimalArr([...animalArr, 'seal'])}>+ Seal</button>
+          <button onClick={() => setAnimalArr([...animalArr, 'leopard'])}>+ Leopard</button>
+          <button onClick={() => setAnimalArr([...animalArr, 'kangaroo'])}>+ Kangaroo</button>
+          <button onClick={() => setAnimalArr(animalArr.slice(0, animalArr.length - 1))} className="remove-animal">- Animal</button>
+        </div>
       </section>
-     
-    </div>
+    </div></>
   );
 }
 
