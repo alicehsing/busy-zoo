@@ -1,5 +1,11 @@
-html body #root .App {
+html, body, #root, .App {
   height: 100%
+}
+
+body{
+  background-image: url("./zoo.png");
+  background-size: cover; 
+  background-repeat: no-repeat;
 }
 
 .App {
@@ -39,4 +45,31 @@ html body #root .App {
   to {
     transform: rotate(360deg);
   }
+}
+
+.fight {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  /* border: solid 2px cornflowerblue; */
+}
+
+.panda, .hedgehog {
+  /* border: solid 2px darkgrey; */
+  margin: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fight button {
+  background-color: gold;
+  margin: 10px;
+}
+
+.fight, .door, .parade {
+  height: 33%;
 }
