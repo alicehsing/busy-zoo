@@ -1,10 +1,13 @@
 import './App.css';
 import { useState } from 'react';
+import Sign from './Sign/Sign';
 
 
 function App() {
   const [pandaSize, setPandaSize] = useState(30);
   const [hedgehogSize, sethedgehogSize] = useState(30);
+  const [isOpen, setIsOpen] = useState(false);
+
 
   return (
     <div className="App">
@@ -22,8 +25,12 @@ function App() {
         </div>
       </section>
 
-      <section className="door">
-
+      <section className="sign">
+        <Sign isOpen={isOpen} />
+        <div className="sign-button">
+          <button onClick={() => setIsOpen(false)}>Close Zoo</button>
+          <button onClick={() => setIsOpen(true)}>Open Zoo</button>
+        </div>
       </section>
 
       <section className="parade">
