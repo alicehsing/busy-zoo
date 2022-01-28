@@ -1,13 +1,14 @@
 import './App.css';
 import { useState } from 'react';
 import Sign from './Sign/Sign';
+import Parade from './Parade';
 
 
 function App() {
   const [pandaSize, setPandaSize] = useState(30);
   const [hedgehogSize, sethedgehogSize] = useState(30);
   const [isOpen, setIsOpen] = useState(false);
-
+  const [animalArr, setAnimalArr] = useState(['giraffe', 'leopard', 'kangaroo', 'seal']);
 
   return (
     <div className="App">
@@ -34,6 +35,12 @@ function App() {
       </section>
 
       <section className="parade">
+        <Parade animalArray={animalArr} />
+        <button>+ Giraffe</button>
+        <button>+ Leopard</button>
+        <button>+ Kangaroo</button>
+        <button>+ Seal</button>
+        <button>Remove Animal</button>
 
       </section>
      

@@ -73,3 +73,13 @@ body{
 .fight, .door, .parade {
   height: 33%;
 }
+
+.animal-item {
+  display: flex;
+  flex-direction: row;
+
+}
+.animal-item span {
+  background-color: brown;
+  margin: 10px;
+}
