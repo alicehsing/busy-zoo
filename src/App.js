@@ -15,7 +15,7 @@ function App() {
       <section className="fight">
         <div className="panda">
           {/* the width of the panda should be 1.5 times whatever the hedgehog size is in state */}
-          <img src="panda.png" width={pandaSize * 1.5} />
+          <img src="panda.png" style={{ width: pandaSize * 1.5 }} alt="panda"/>
           <button onClick={() => setPandaSize(pandaSize + 5)}>Panda gets stronger</button>
           <button onClick={() => setHedgehogSize(hedgehogSize - 5)}>Panda attacks Hedgehog</button>
         </div>
